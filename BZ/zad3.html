@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         .title{
+            background-color: orange;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .srodek{
+            
+            display: flex;
+            justify-content: center;
+        }
+        
+
+        .kontener{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            background: beige;
+            margin-top: 40px;
+        }
+
+        .obiekt{
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            background: orange;
+            border: 3px solid crimson;
+           
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h1 class="title">Obliczanie pola kwadratu: </h1>
+
+    <label>Podaj bok a: </label>
+    <input class="uaua" name="a" placeholder="Wprowadź długość" required type="number" step="0.01">
+
+    <br />
+    <br />
+
+    <button onclick="obliczaniepola()">Oblicz</button>
+    
+
+    <br />
+
+    <h2>Obwód kwadratu wynosi: <span class="obwod"></span></h2>
+    <h2>Pole kwadratu wynosi: <span class="pole"></span></h2>
+   <button onclick="obliczanieobwodu()">Oblicz obwod</button>
+
+
+    <div class="kontener">
+        
+    </div>
+        
+    </div>
+    <div class="wynik"></div>
+
+    <script>
+        const bok = document.querySelector(".uaua")
+        const polespan = document.querySelector(".pole")
+
+        const bok2 = document.querySelector(".auau")
+        const obwodspan = document.querySelector(".obwod")
+
+
+        function obliczaniepola(){
+             let bokvalue = bok.value;
+             console.log(bokvalue)
+              
+             const pole = bokvalue*bokvalue;
+             console.log(pole)
+             polespan.innerHTML = pole;
+             spr(bokvalue);
+          
+            
+        }
+        function obliczanieobwodu(){
+
+            let bok2value = bok.value;
+            console.log(bok2value)
+
+            const obwod = bok2value*4;
+            console.log(obwod)
+            obwodspan.innerHTML = obwod;
+            spr(bok2value);
+        }
+        
+
+     function spr(a){
+        const kontener = document.querySelector(".kontener")
+        kontener.innerHTML =  `<div class = "obiekt" style= "width: ${a}cm; height: ${a}cm"></div>`
+
+     }
+
+
+        
+
+        
+    </script>
+</body>
+</html>

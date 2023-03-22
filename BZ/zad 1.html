@@ -1,0 +1,95 @@
+<!--
+    Tworzenie i modyfikowanie elementów po kliknięciu:
+ 
+    1. Stwórz przycisk w HTML.
+    2. Utwórz dwie klasy, umożliwiające ostylowanie elementów, tak aby powstał kwadrat i kółko
+    3. Pobierz przycisk za pomocą JavaScript, i dodaj do niego zdarzenie na click
+    4. Utwórz funkcję, która:
+        - będzie tworzyła nowy element div (createElement)
+        - przypisz do nowego elementu liczbę (liczba powinna być zmienną, inkrementowaną na końcu programu);
+        - Utwórz warunek dodający do co piątego elementu klasę stylującą element 
+        na kółko, każdy inny element powinien być kwadratem. 
+        - dodaj utworzony element do ciała strony (document.body)
+    5. Podłącz funkcję do zdarzenia kliknięcia.
+-->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title</title>
+    <style>
+
+ body{
+    background-color: orange;
+ }
+.kwadrat{
+    width: 100px;
+    height: 100px;
+    background-color:red;
+    margin: 10px;
+    color: white;
+    float: left;
+}
+.kolo{
+    width: 94px;
+    height: 94px;
+    border-radius: 100%;
+    border: 3px solid black;
+    margin: 10px;
+    float: left;
+}
+div{
+    text-align: center;
+    font-size: 90px;
+}
+button{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+    
+  
+    <div class="przycisk">
+        <Button>Dodaj nowy element</Button>
+    </div>
+
+    
+    </br>
+    <script>
+        const btn = document.querySelector('button');
+        let i = 0;
+        btn.addEventListener('click', function(){
+            i++;
+            if(i%5!=0){
+                let divw = document.createElement('div');
+                divw.textContent = i;
+                document.body.appendChild(divw);
+                divw.classList.add('kwadrat');
+                console.log(divw);
+            }
+            else{
+                let divw = document.createElement('div');
+                divw.textContent = i;
+                document.body.appendChild(divw);
+                divw.classList.add('kolo');
+                console.log(divw);
+            }
+        })
+    </script>
+    
+</body>
+</html>
+ 
+ 
